@@ -1,0 +1,74 @@
+/* Page background and font */
+body {
+    background-color: #000000; /* black background */
+    color: #ffffff;            /* main text white */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+h1 {
+    color: #ffffff; /* header white */
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Movie cards */
+.card {
+    border-radius: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #111111; /* dark card background */
+    color: #ffffff;
+    border: none;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.5); /* subtle blue glow */
+}
+
+/* Movie title */
+.card-title {
+    font-weight: 700;
+    color: #ffffff; /* title white */
+}
+
+/* Movie details text */
+.card-text {
+    font-size: 0.95rem;
+    color: #3399ff; /* blue text for genres and rating */
+}
+
+/* Search input */
+input.form-control {
+    border-radius: 50px 0 0 50px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #333333;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+input.form-control::placeholder {
+    color: #8888ff; /* placeholder light blue */
+}
+
+/* Search button */
+button.btn-primary {
+    border-radius: 0 50px 50px 0;
+    font-size: 1rem;
+    background: #3399ff; /* blue button */
+    border: none;
+    color: #ffffff;
+}
+
+button.btn-primary:hover {
+    background: #66b3ff; /* lighter blue on hover */
+}
+
+/* Error message */
+.text-danger {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    color: #ff3333; /* red for errors */
+}
