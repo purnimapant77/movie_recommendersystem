@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hybrid Movie Recommender</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 sidebar">
+            <h5 class="sidebar-title">🎞 All Movies</h5>
+
+            <div class="movie-list">
+                {% for movie in all_movies %}
+                    <a href="/?movie={{ movie }}" class="movie-link">
+                        {{ movie }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-9 main-content">
+
+            <h1 class="text-center mb-4">🎬Hybrid Movie Recommender</h1>
+            <form method="POST" class="mb-4">
+                <div class="input-group search-box">
+                    <input list="movies"
+                           class="form-control"
+                           name="movie_name"
+                           placeholder="Enter a movie title"
+                           value="{{ query }}"
+                           required>
+
+                    <datalist id="movies">
+                        {% for movie in all_movies %}
+                            <option value="{{ movie }}">
+                        {% endfor %}
+                    </datalist>
+
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
+
+            {% if corrected_movie %}
+                <h4 class="text-info mb-4">
+                    Recommendations for:
+                    <strong>{{ corrected_movie }}</strong>
+                </h4>
+            {% endif %}
+
+            {% if recommendations %}
+                <div class="row">
+                    {% for movie in recommendations %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ movie.title }}</h5>
+
+                                    <p class="card-text">
+                                        <strong>🎭 Genre:</strong><br>
+                                        {{ movie.genres }}
+                                    </p>
+
+                                    <p class="card-text">
+                                        <strong>👥 Cast:</strong><br>
+                                        {{ movie.cast }}
+                                    </p>
+
+                                    <p class="card-text">
+                                        <strong>🎬 Director:</strong><br>
+                                        {{ movie.director }}
+                                    </p>
+
+                                    <p class="card-text">
+                                        <strong>⭐ Rating:</strong>
+                                        {{ movie.vote_average }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            {% elif query %}
+                <p class="text-danger text-center mt-4">
+                    Movie not found in the database!
+                </p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

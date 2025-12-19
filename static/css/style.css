@@ -1,0 +1,125 @@
+/* ================= GLOBAL ================= */
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= LEFT SIDEBAR ================= */
+.sidebar {
+    background-color: #000000;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #1a1a1a;
+}
+
+.sidebar-title {
+    text-align: center;
+    padding: 15px;
+    font-weight: 700;
+    color: #66b3ff;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.movie-list {
+    padding: 10px;
+}
+
+.movie-link {
+    display: block;
+    padding: 6px 10px;
+    margin-bottom: 2px;
+    color: #4da6ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+.movie-link:hover {
+    background-color: #0b1c33;
+    color: #ffffff;
+}
+
+/* Scrollbar (dark) */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #1a3d7c;
+}
+.sidebar::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+/* ================= RIGHT MAIN AREA ================= */
+.main-content {
+    background: linear-gradient(135deg, #050b14, #000000);
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* ================= HEADER ================= */
+h1 {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+h4.text-info {
+    color: #4da6ff !important;
+}
+
+/* ================= SEARCH ================= */
+.search-box input.form-control {
+    border-radius: 50px 0 0 50px;
+    background-color: #0b0b0b;
+    border: 1px solid #222;
+    color: #ffffff;
+}
+
+.search-box input::placeholder {
+    color: #7aa7ff;
+}
+
+.search-box button {
+    border-radius: 0 50px 50px 0;
+    background-color: #3399ff;
+    border: none;
+}
+
+.search-box button:hover {
+    background-color: #66b3ff;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background-color: #0b0b0b;
+    border-radius: 15px;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+}
+
+.card-title {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #cce0ff;
+}
+
+.card-text strong {
+    color: #66b3ff;
+}
+
+/* ================= ERROR ================= */
+.text-danger {
+    color: #ff4d4d !important;
+    font-size: 1.1rem;
+}
